@@ -1,0 +1,51 @@
+# Basic
+* 数组可以看为一个对象，创建数组时返回了该数组第一个元素的指针，可以用a[i]的方法访问该对象第i个元素，也可以用*(a+i)访问
+
+
+    void PrintData1(char* a){
+        while (*a){
+        printf("%c\t",*a);
+        a++;
+        }
+    }
+    void PrintData2(char a[]){
+        for (int i = 0; i < 100 && a[i]; ++i) {
+        printf("%c\t",a[i]);
+        }
+    }
+    int main() {
+        char s[100];
+        s[0] = '1';
+        s[1] = 59;
+        s[2] = NULL;
+        PrintData1(s);
+        printf("\n");
+        PrintData2(s);
+        return 0;
+    }
+* typedef:上方的BiNode每次调用时需要在前面加上struct，下方的BiNode则不需要，然而在结构体里只能使用上方的BiTNode
+  
+
+    typedef struct BiTNode {
+        struct BiTNode *lchild;
+        struct BiTNode *rchild;
+        ElemType data;
+    } BiTNode, *BiTree;
+
+
+下方使用数组时，必须声明数组大小，给给数组赋值时，不能将其重定义，只能挨个赋值
+
+
+    typedef struct EdgeNode{
+        struct EdgeNode *nextEdge;
+        EdgeType edgeData;
+        int vertexIndex;
+    }EdgeNode;
+    typedef struct {
+        struct EdgeNode *firstEdge;
+        VertexType vertexData;
+    }VertexNode,AdjList[MaxVertexNum];
+    typedef struct {
+        AdjList vertexes;
+        int vertexNum,edgeNum;
+    }ALGraph;
