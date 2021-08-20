@@ -1,27 +1,43 @@
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#define INF 0x3f3f3f3f
+using namespace std;
+int a[10010];
+int n, i,j, m;
+int vis[100100],ans[100100];
+int mini,maxi;
+int solve(){
 
-#include <cstdio>
-#include <cstdlib>
+    for (i=0;i<n;i++){
+        memset (vis,0,sizeof(vis));
+        mini=INF,maxi=0;
+        for (j=i;j<n;j++){
+            mini=min(mini,a[j]);
+            maxi=max(maxi,a[j]);
+            if (!vis[a[j]]){
+                if (maxi-mini == j-i)
+                    ans[j-i+1]++;
+                vis[a[j]]=1;
+            }
+            else
+                break;
 
-void PrintData1(char* a){
-    while (*a){
-        printf("%c\t",*a);
-        a++;
+        }
     }
-}
 
-void PrintData2(char a[]){
-    for (int i = 0; i < 100 && a[i]; ++i) {
-        printf("%c\t",a[i]);
+}
+int main(){
+    int k;
+    scanf ("%d %d",&n, &m);
+    for (i=0;i<n;i++)
+        scanf ("%d",&a[i]);
+    memset (ans,0,sizeof(ans));
+    solve();
+    printf ("Case #1:\n");
+    while (m--){
+        scanf ("%d", &k);
+        printf ("%d\n",ans[k]);
     }
-}
-
-int main() {
-    char s[100];
-    s[0] = '1';
-    s[1] = 59;
-    s[2] = NULL;
-    PrintData1(s);
-    printf("\n");
-    PrintData2(s);
     return 0;
 }

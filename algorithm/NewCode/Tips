@@ -1,0 +1,2 @@
+# Tips
+* 反转链表 head、p、q,q初始化为0，处理好p = p->next，head = p等关系
