@@ -1,5 +1,6 @@
-#include "LeetCode/problem789.cpp"
+//#include "LeetCode/problem789.cpp"
 //#include "NewCode/NC119.cpp"
+#include "Offer/problem1.cpp"
 #include<cstdio>
 #include<algorithm>
 #include<cstring>
@@ -9,10 +10,7 @@
 using namespace std;
 int main(){
     Solution a;
-    vector<char> chars {'a','b','b','b','b','b','b','b','b','b','b'};
-    cout<<a.compress(chars);
-    for (int i = 0; i < chars.size(); ++i) {
-        printf("%c\t",chars[i]);
-    }
+    int c = 0x7fffffff;
+    cout<<a.Divide(c,-2);
     return 1;
 };
