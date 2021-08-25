@@ -1,6 +1,5 @@
-//#include "LeetCode/problem789.cpp"
-//#include "NewCode/NC119.cpp"
-#include "Offer/problem1.cpp"
+//#include "LeetCode/problem797.cpp"
+#include "Offer/problem5.cpp"
 #include<cstdio>
 #include<algorithm>
 #include<cstring>
@@ -10,7 +9,7 @@
 using namespace std;
 int main(){
     Solution a;
-    int c = 0x7fffffff;
-    cout<<a.Divide(c,-2);
+    vector<string>vector {"abcw","foo","bar","fxyz","abcdef"};
+    cout<<a.maxMultiply(vector);
     return 1;
 };
