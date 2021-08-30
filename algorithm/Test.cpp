@@ -1,5 +1,6 @@
-#include "LeetCode/problem295+.cpp"
+#include "LeetCode/problem528.cpp"
 //#include "Offer/problem5.cpp"
+//#include "Others/Mota.cpp"
 #include<cstdio>
 #include<algorithm>
 #include<cstring>
@@ -8,8 +9,8 @@
 #include <vector>
 using namespace std;
 int main(){
-    Solution a;
-    vector<string>vector {"abcw","foo","bar","fxyz","abcdef"};
-    cout<<a.maxMultiply(vector);
+    vector<int>arr{1,3,1};
+    Solution a(arr);
+    cout<<a.pickIndex();
     return 1;
 };
