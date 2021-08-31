@@ -1,0 +1,31 @@
+# note
+* 基本STL
+  * vector初始化(length,initiate)  
+    `vector<size_t> fib(15, 1);`
+  * 求总和 accumulate;三个形参：vector开始，vector结尾，初始值  
+    `int sum = accumulate(vec.begin() , vec.end() , 0);`
+  * copy:  
+    `copy(vec.begin(), vec.end(), ostream_ iterator<int>{cout, " "});//打印`  
+    `copy(vec.begin(), vec.end(), back_inserter(container));//后插在container上`  
+    `copy(vec.begin(), vec.end(), container.begin());//在container起始处加`
+    
+  * partial_sum:求vector前缀部分的运算  
+    `OutputIterator partial_sum (InputIterator first,
+    InputIterator last,
+    OutputIterator result,
+    BinaryOperation binary_op);`
+    求前缀积的代码：
+    `partial_sum(vec.begin(), vec.end(), back_inserter(container), multiplies<int>());`
+  * adjacent_difference:求差分,形参和partial_sum一样，是partial_sum的反运算
+  * lower_bound:在 [first, last) 区域内查找不小于 val 的元素  
+    `ForwardIterator lower_bound (ForwardIterator first, ForwardIterator last,
+    const T& val, Compare comp);`
+  * 随机变量:
+  * priority_queue堆:
+    `template <typename T, typename Container=std::vector<T>, typename Compare=std::less<T>> class priority_queue`  
+    `priority_queue<int, vector<int> , less<int>> lessThanMid;`大根堆  
+    `priority_queue<int, vector<int> , greater<int>> greaterThanMid;`小根堆
+    
+* 差分数组
+  * 差分数组的性质是，当我们希望对原数组的某一个区间 [l,r][l,r] 施加一个增量inc时，差分数组 dd 对应的改变是：d[l]增加inc，d[r+1]减少inc。这样对于区间的修改就变为了对于两个位置的修改。并且这种修改是可以叠加的，即当我们多次对原数组的不同区间施加不同的增量，我们只要按规则修改差分数组即可。
+  * 用于处理区间内增量问题
