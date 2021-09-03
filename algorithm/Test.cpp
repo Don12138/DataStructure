@@ -1,4 +1,4 @@
-#include "LeetCode/problem1109.cpp"
+#include "LeetCode/problem17.14.cpp"
 //#include "Offer/problem5.cpp"
 //#include "Others/Mota.cpp"
 #include<cstdio>
@@ -9,10 +9,13 @@
 #include <vector>
 using namespace std;
 int main(){
-    vector<vector<int>>arr{{1,2,10},{2,3,20},{2,5,25}};
+    vector<int>arr{1,3,5,7,2,4,6,8};
     vector<int>empty;
     Solution a;
-    empty = a.corpFlightBookings(arr,5);
+    string version1 = "1.0";
+    string version2 = "1.0.0";
+//    cout<<a.smallestK(arr,4);
+    empty = a.smallestK(arr,0);
     copy(empty.begin(),empty.end(),ostream_iterator<int>{cout, " "});
     return 1;
 };
