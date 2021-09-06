@@ -19,7 +19,8 @@
   * adjacent_difference:求差分,形参和partial_sum一样，是partial_sum的反运算
   * lower_bound:在 [first, last) 区域内查找不小于 val 的元素  
     `ForwardIterator lower_bound (ForwardIterator first, ForwardIterator last,
-    const T& val, Compare comp);`
+    const T& val, Compare comp);`   
+    `int a = lower_bound(vector.begin(),vector.end(),target)-vector.begin()`
   * 随机变量:
   * priority_queue堆:
     `template <typename T, typename Container=std::vector<T>, typename Compare=std::less<T>> class priority_queue`  
