@@ -51,4 +51,4 @@ public:
         ans.insert(ans.end(),cur_str);
         return ans;
     }
-};
+};//模拟题简化问题很关键
