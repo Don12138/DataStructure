@@ -1,4 +1,4 @@
-#include "LeetCode/problem212.cpp"
+#include "LeetCode/problem36.cpp"
 //#include "Offer/problem12.cpp"
 //#include "Others/Random_Quick_Sort.cpp"
 #include<cstdio>
@@ -10,7 +10,7 @@
 using namespace std;
 #define lowbit(x) (x&-x)
 int main(){
-    vector<vector<int>>cld{{1,1}};
+    vector<vector<char>>cld{};
     vector<string>arr{"ab","ba","a","b"};
     vector<int>arr1{5,1,5,1,3,5,12,5,1,9,2,7,1,2,4,6,1,5,7,9};
     vector<string>empty;
