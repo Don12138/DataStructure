@@ -22,6 +22,7 @@ public:
         return negative?-key:key;
 
     }
+
     int DivideCore(int dividend,int divisor){
         int key = 0;
         while (dividend <= divisor){
