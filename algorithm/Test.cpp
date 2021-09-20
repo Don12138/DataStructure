@@ -1,4 +1,4 @@
-#include "LeetCode/problem650.cpp"
+#include "LeetCode/problem673.cpp"
 //#include "Offer/problem12.cpp"
 //#include "Others/Random_Quick_Sort.cpp"
 #include<cstdio>
@@ -8,19 +8,10 @@
 #include <string>
 #include <vector>
 using namespace std;
-#define lowbit(x) (x&-x)
 int main(){
-    vector<vector<char>>cld{};
-    vector<string>arr{"ab","ba","a","b"};
-    vector<int>arr1{5,1,5,1,3,5,12,5,1,9,2,7,1,2,4,6,1,5,7,9};
-    vector<string>empty;
+    vector<int>arr1{2,2,2,2,2};
     Solution a;
-    int clda[2] = {1,0};
-    string version1 = "1.0";
-    string version2 = "1.0.0";
-    cout<<a.minSteps(3);
-int b =-126;
-//    cout<<~b+1;
-//    copy(empty.begin(),empty.end(),ostream_iterator<string>{cout, "\n"});
+//    copy(arr1.begin(),arr1.end(),ostream_iterator<string>{cout, "\n"});
+    cout<<a.findNumberOfLIS(arr1);
     return 1;
 };
