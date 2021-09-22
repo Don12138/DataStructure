@@ -1,4 +1,5 @@
-#include <cstdlib>
+#include <cstdio>
+#include <algorithm>
 #define MAX_SIZE 255
 typedef struct {
     char ch[MAX_SIZE];
@@ -24,8 +25,9 @@ void get_next(SString T,int next[]){
     }
 }
 
-void get_nextval(SString T,int nextval[]){
+void get_nextval(SString T){
     int i = 1,j=0;
+    int nextval[T.length+1];
     nextval[1] = 0;
     while (i<T.length){
         if (j==0||T.ch[i] == T.ch[j]){
@@ -35,8 +37,11 @@ void get_nextval(SString T,int nextval[]){
             else
                 nextval[i] = nextval[j];
         } else{
-            j = nextval[i];
+            j = nextval[j];
         }
+    }
+    for (int k = 0; k < T.length; ++k) {
+        printf("%d\t",nextval[k]);
     }
 }
 int get_index(SString S,SString T,int next[]){
@@ -58,5 +63,13 @@ int main(){
     SString T = *(SString*)malloc(sizeof (SString));
     Init_String(S);
     Init_String(T);
+    Insert_String(T,'a');
+    Insert_String(T,'b');
+    Insert_String(T,'a');
+    Insert_String(T,'a');
+    Insert_String(T,'b');
+    Insert_String(T,'c');
+    printf("%d",T.length);
+    get_nextval(T);
     return 0;
 }
